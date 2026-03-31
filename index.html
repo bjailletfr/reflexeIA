@@ -138,7 +138,7 @@ const ctx = canvas.getContext('2d');
 const img = new Image();
 
 // ⚠️ image locale (doit être dans le même dossier)
-img.src = 'reflexe_IA.png';
+img.src = 'reflexe_IA_.png';
 
 const zones = [
     { name: "Compte élève", x: 30, w: 210 },
@@ -181,7 +181,7 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(img, 0, 0);
 
-    const rectY = 350;
+    const rectY = 200;
     const rectH = 100;
 
     state.forEach((color, i) => {
