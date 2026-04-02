@@ -112,6 +112,30 @@ button {
 
 .dl-btn { background: #007bff; }
 .cp-btn { background: #28a745; }
+
+.info-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #6c757d;
+    color: white;
+    font-family: serif; /* Pour un "i" plus élégant */
+    font-style: italic;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background 0.3s;
+}
+
+.info-circle:hover {
+    background-color: #495057;
+}
+	
 </style>
 </head>
 
@@ -126,6 +150,7 @@ button {
     <div class="actions">
         <button class="dl-btn" onclick="download()">Télécharger PNG</button>
         <button class="cp-btn" onclick="copyToClipboard()">Copier l'image</button>
+		<button onclick="openInfo()" class="info-circle">i</button>
     </div>
 	
 </div>
@@ -133,6 +158,23 @@ button {
     © 2026 B.Jaillet – Tous droits réservés
 </footer>
 <script>
+
+function openInfo() {
+    // Largeur et Hauteur de la fenêtre surgissante
+    const width = 600;
+    const height = 700;
+    
+    // Calcul pour centrer la fenêtre sur l'écran
+    const left = (window.screen.width / 2) - (width / 2);
+    const top = (window.screen.height / 2) - (height / 2);
+
+    window.open(
+        'infos.html', 
+        'Aide Réflexe IA', 
+        `width=${width},height=${height},top=${top},left=${left},resizable=yes,scrollbars=yes`
+    );
+}
+
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
